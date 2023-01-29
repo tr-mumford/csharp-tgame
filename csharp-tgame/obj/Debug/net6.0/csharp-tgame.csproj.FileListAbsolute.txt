@@ -1,0 +1,15 @@
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\bin\Debug\net6.0\csharp-tgame.exe
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\bin\Debug\net6.0\csharp-tgame.deps.json
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\bin\Debug\net6.0\csharp-tgame.runtimeconfig.json
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\bin\Debug\net6.0\csharp-tgame.dll
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\bin\Debug\net6.0\csharp-tgame.pdb
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.csproj.AssemblyReference.cache
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.AssemblyInfoInputs.cache
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.AssemblyInfo.cs
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.csproj.CoreCompileInputs.cache
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.dll
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\refint\csharp-tgame.dll
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.pdb
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\csharp-tgame.genruntimeconfig.cache
+C:\Repos\_Personal\csharp-tgame\csharp-tgame\obj\Debug\net6.0\ref\csharp-tgame.dll

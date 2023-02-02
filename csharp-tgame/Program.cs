@@ -7,6 +7,9 @@ namespace csharp_tgame
     {
         static void Main(string[] args)
         {
+            bool swithroo = true;
+            
+
             Console.CursorVisible = false;
             var countP = 10;
             var heightP = 10;
@@ -14,9 +17,7 @@ namespace csharp_tgame
 
             while (true)
             {
-                Console.SetCursorPosition(2, 2);
-
-                char[ , ] land =
+                char[,] land =
                 {
                     { '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_' },
                     { '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_' },
@@ -47,26 +48,77 @@ namespace csharp_tgame
                 };
 
                 land[heightP, countP] = 'X';
-                land[5 , countE] = '<';
+                land[5, countE] = '<';
 
                 for (int i = 0; i < 26; i++)
                 {
-                    for(int j = 0; j < 49; j++)
+                    Console.SetCursorPosition(3, 2 + i);
+                    for (int j = 0; j < 49; j++)
                     {
-                        Console.Write(land[i , j]);
+                        Console.Write(land[i, j]);
                     }
-                    Console.SetCursorPosition(2, 2 + i);
                 }
 
-                char testString = Console.ReadKey(true).KeyChar;
+                //char testString = Console.ReadKey(true).KeyChar;
+                if (Console.KeyAvailable)
+                {
+                    char testString = Console.ReadKey(true).KeyChar;
+                    //Console.WriteLine("\nKey Pressed: " + key.Key);
+                    
+                    if (testString == 'w') { heightP--; }
+                    if (testString == 's') { heightP++; }
+                    if (testString == 'd') { countP = countP + 2; }
+                    if (testString == 'a') { countP = countP - 2; }
+                }
+
+
+
+                if (countE < 5) 
+                {
+                    swithroo = true;
+                }
                 
-                if (testString == 'w') { heightP--; }
-                if (testString == 's') { heightP++; }
-                
-                if (testString == 'd') { countP = countP + 2; }
-                if (testString == 'a') { countP = countP - 2; }
-                //countE = countE - 2;
+                if (countE > 45)
+                {
+                    swithroo = false;
+                }
+
+                if (swithroo)
+                {
+                    countE++;
+                }
+                else
+                {
+                    countE--;
+                }
+
+                Thread.Sleep(10);
             }
+
+
+
+
+
+
+
+
+
+
+
+            /*
+            while(true)
+            {
+                Console.WriteLine("Hello World!");
+
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    Console.WriteLine("\nKey Pressed: " + key.Key);
+                }
+
+                Thread.Sleep(400);
+            }
+            */
         }
     }
 }

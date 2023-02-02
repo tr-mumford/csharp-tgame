@@ -5,6 +5,10 @@ namespace csharp_tgame
 {
     internal class Program
     {
+
+        static volatile bool exit = false;
+
+
         static void Main(string[] args)
         {
             Console.CursorVisible = false;
@@ -13,6 +17,7 @@ namespace csharp_tgame
 
             while (true)
             {
+                char testString = 'z';
                 Console.SetCursorPosition(2, 2);
 
                 char[] land =
@@ -31,9 +36,24 @@ namespace csharp_tgame
                     Console.Write(land[i]);
                 }
 
-                //var testString = Console.ReadKey(true).KeyChar;
-                //if (testString == 'j') { countP--; }
-                //if (testString == 'k') { countP++; }
+                Task.Factory.StartNew(() =>
+                {
+                    while (true)
+                    {
+                        while (Console.ReadKey(true).Key != ConsoleKey.K) ;
+                        exit = true;
+                    }
+                });
+
+                while (!exit)
+                {
+                    Console.WriteLine("Hello!");
+                    Thread.Sleep(1000);
+                }
+
+                //char testString = Console.ReadKey(true).KeyChar;
+                if (testString == 'j') { countP--; }
+                if (testString == 'k') { countP++; }
                 countE = countE - 2;
 
                 if(countE == countP)
@@ -51,8 +71,13 @@ namespace csharp_tgame
                     Console.WriteLine("DEATH");
                 }
 
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
         }
+
+        /*public static async Task userInput()
+        {
+            char testString = Console.ReadKey(true).KeyChar;
+        }*/
     }
 }

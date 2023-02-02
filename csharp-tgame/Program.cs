@@ -7,14 +7,14 @@ namespace csharp_tgame
     {
         static void Main(string[] args)
         {
-            Console.SetCursorPosition(2, 2);
             Console.CursorVisible = false;
-
             var countP = 0;
             var countE = 26;
 
             while (true)
             {
+                Console.SetCursorPosition(2, 2);
+
                 char[] land =
                 {
                     '_', '_', '_', '_', '_', '_', '_', '_',
@@ -23,19 +23,17 @@ namespace csharp_tgame
                     '_', '_', '_', '_', '_', '_', '_', '_',
                 };
 
+                land[countP] = 'X';
+                land[countE] = '<';
 
                 for (int i = 0; i < land.Length; i++)
                 {
-                    land[countP] = 'X';
-                    land[countE] = '<';
                     Console.Write(land[i]);
                 }
 
-                Console.SetCursorPosition(2, 2);
-
-                var testString = Console.ReadKey().KeyChar;
-                if (testString == 'j') { countP--; }
-                if (testString == 'k') { countP++; }
+                //var testString = Console.ReadKey(true).KeyChar;
+                //if (testString == 'j') { countP--; }
+                //if (testString == 'k') { countP++; }
                 countE = countE - 2;
 
                 if(countE == countP)
@@ -52,6 +50,8 @@ namespace csharp_tgame
                     Console.WriteLine("DEATH");
                     Console.WriteLine("DEATH");
                 }
+
+                Thread.Sleep(500);
             }
         }
     }
